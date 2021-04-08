@@ -3,6 +3,7 @@ package com.example.testtodo.ui.tasklist
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isGone
 import androidx.recyclerview.widget.RecyclerView
 import com.example.testtodo.R
 import kotlinx.android.extensions.LayoutContainer
@@ -39,6 +40,8 @@ class TaskListAdapter : RecyclerView.Adapter<TaskListAdapter.ViewHolder>() {
             with(item) {
                 checkbox.isChecked = isChecked
                 tvName.text = name
+                tvTime.isGone = datetime.isNullOrEmpty()
+                tvTime.text = datetime
             }
         }
 
